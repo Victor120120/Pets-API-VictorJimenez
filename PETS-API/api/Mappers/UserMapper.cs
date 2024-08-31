@@ -28,5 +28,16 @@ namespace api.Mappers
             };
         }
 
+         public static User ToUserFromCreateDto(this CreateUserWithPetsRequestDto requestDto)
+    {
+        return new User
+        {
+            FirstName = requestDto.FirstName,
+            LastName = requestDto.LastName,
+            Age = requestDto.Age,
+            pets = new List<Pet>() // Inicializar la lista de mascotas
+        };
+    }
+
     }
 }
